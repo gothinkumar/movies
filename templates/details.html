@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {{obj.name}} <br>
+    {{obj.director}} <br>
+    <img src="{{obj.image.url}}" alt="img" width="200" height="190"><br>
+    {{obj.desc}} <br>
+    <br>
+    <a href="{% url 'moviesapp:update' obj.id %}">Update</a>
+    <a href="{% url 'moviesapp:delete' obj.id %}">Delete</a> <br>
+    <a href="{% url 'moviesapp:homeview' %}">Go back</a>
+
+</body>
+</html>
+{% endblock %}
